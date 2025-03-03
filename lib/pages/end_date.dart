@@ -1,4 +1,5 @@
 import 'package:figma_ui/components/selectedWeek.dart/showDatePickerFunction.dart';
+import 'package:figma_ui/pages/location.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class EndDate extends StatefulWidget {
 }
 
 class _EndDateState extends State<EndDate> {
-  DateTime? selectedDate;
+  DateTime? selectedDate_end_date;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +45,11 @@ class _EndDateState extends State<EndDate> {
               ],
             ),
           ),
-          //continue
+
           InkWell(
             borderRadius: BorderRadius.circular(8),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LocationPage()));
             },
             child: Row(
               children: [
@@ -117,17 +118,17 @@ class _EndDateState extends State<EndDate> {
                   onTap:
                       () => showCupertinoDatePicker(
                         context: context,
-                        initialDate: selectedDate ?? DateTime.now(),
+                        initialDate: selectedDate_end_date ?? DateTime.now(),
                         onDateSelected: (DateTime newDate) {
                           setState(() {
-                            selectedDate = newDate;
+                            selectedDate_end_date = newDate;
                           });
                         },
                       ),
                   controller: TextEditingController(
                     text:
-                        selectedDate != null
-                            ? "${selectedDate!.year}-${selectedDate!.month}-${selectedDate!.day}"
+                        selectedDate_end_date != null
+                            ? "${selectedDate_end_date!.year}-${selectedDate_end_date!.month}-${selectedDate_end_date!.day}"
                             : "",
                   ),
                 ),
@@ -160,6 +161,7 @@ class _EndDateState extends State<EndDate> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: CupertinoTextField(
+                      keyboardType: TextInputType.number,
                       decoration: BoxDecoration(
                         color: Colors.grey.shade300,
                         border: Border.all(color: Colors.grey.shade500),
@@ -168,7 +170,7 @@ class _EndDateState extends State<EndDate> {
                     ),
                   ),
                 ),
-                 Container(
+                Container(
                   child: Center(child: Text('sessions')),
                   width: 80,
                   height: 36,

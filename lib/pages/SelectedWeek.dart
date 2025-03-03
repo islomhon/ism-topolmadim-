@@ -1,6 +1,6 @@
 import 'package:figma_ui/components/selectedWeek.dart/CupertinoDropdownButtton.dart';
 import 'package:figma_ui/components/selectedWeek.dart/CuppertinoTimePickerFunction.dart';
-import 'package:figma_ui/components/selectedWeek.dart/MonthDropDownItemComponent.dart';
+import 'package:figma_ui/components/selectedWeek.dart/MonthCheckbox.dart';
 import 'package:figma_ui/components/selectedWeek.dart/WeekCheckboxses.dart';
 import 'package:figma_ui/components/selectedWeek.dart/showDatePickerFunction.dart';
 import 'package:figma_ui/pages/end_date.dart';

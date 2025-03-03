@@ -12,7 +12,7 @@ class _MonthCheckboxState extends State<MonthCheckbox> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 120,
+      height: 130,
 
       child: SingleChildScrollView(
         child: Wrap(
